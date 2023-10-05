@@ -16,10 +16,10 @@
       </Link>
     </div>
     <div class="mb-4">
-      <Link class="group flex items-center py-3" :href="route('sessions.index')">
+      <Link class="group flex items-center py-3" :href="route('responsables.index')">
       <icon name="dashboard" class="mr-2 w-4 h-4"
-        :class="isUrl('sessions.index') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'" />
-      <div :class="isUrl('sessions.index') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Responsable</div>
+        :class="isUrl('responsables.index') ? 'fill-white' : 'fill-indigo-400 group-hover:fill-white'" />
+      <div :class="isUrl('responsables.index') ? 'text-white' : 'text-indigo-300 group-hover:text-white'">Responsable</div>
       </Link>
     </div>
   </div>

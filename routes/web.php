@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ResponsableController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -34,5 +35,7 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::resource('sessions', SessionController::class)->only('index', 'create', 'store')->middleware(['auth', 'verified']);
+    Route::resource('sessions', SessionController::class)->only('index', 'create', 'store', 'show', 'edit', 'update', 'destroy')->middleware(['auth', 'verified']);
+
+    Route::resource('responsables', ResponsableController::class)->only('index', 'create', 'store', 'show', 'edit', 'update', 'destroy')->middleware(['auth', 'verified']);
 });
