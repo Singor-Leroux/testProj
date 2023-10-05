@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\example;
 use App\Models\Session;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
@@ -13,8 +14,10 @@ class SessionController extends Controller
      */
     public function index()
     {
-        //
-        return Inertia::render('Sessions/IndexSessions');
+        $examples = example::limit(10)->get();
+        return Inertia::render('Sessions/IndexSessions', [
+            'examples' => $examples,
+        ]);
     }
 
     /**
