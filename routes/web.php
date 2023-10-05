@@ -34,5 +34,11 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 
-    Route::resource('sessions', SessionController::class)->only('index', 'create', 'store','update')->middleware(['auth', 'verified']);
+    Route::resource('sessions', SessionController::class)->only('index','create','store','destroy','update')->middleware(['auth', 'verified']);
+
+    
+    Route::get('modify', [SessionController::class, 'store'])
+    ->name('sessions')
+    ->middleware('auth');
 });
+

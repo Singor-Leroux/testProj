@@ -31,6 +31,8 @@ class SessionController extends Controller
     public function store(Request $request)
     {
         //
+        // return Inertia::render('Sessions/ShowSession');
+        return "Tout fonctionne";
     }
 
     /**
@@ -39,6 +41,8 @@ class SessionController extends Controller
     public function show(Session $session)
     {
         //
+    
+
     }
 
     /**
