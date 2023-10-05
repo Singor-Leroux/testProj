@@ -4,7 +4,6 @@ import { Head, Link } from '@inertiajs/vue3'
 
 import InputLabel from '@/Components/InputLabel.vue';
 import TextInput from '@/Components/TextInput.vue';
-import PrimaryButton from '@/Components/PrimaryButton.vue';
 
 const title = 'Sessions';
 
@@ -52,8 +51,8 @@ const title = 'Sessions';
                                     <option value="TC">Tiburce KOUAGOU</option>
                                     <option value="TI">Fabrice ANABA</option>
                                 </select><br>
-                                <PrimaryButton name="add"
-                                    class="rounded-lg shadow bg-purple-600 mt-6 p-4 hover:bg-pink-400" v-bind="`/sessions.store`">MODIFIER</PrimaryButton >
+                                <button name="add"
+                                    class="rounded-lg shadow bg-purple-600 mt-6 p-4 hover:bg-pink-400" >MODIFIER</button >
 
                             </fieldset>
                         </form>
