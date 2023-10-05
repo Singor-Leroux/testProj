@@ -31,8 +31,9 @@ class SessionController extends Controller
     public function store(Request $request)
     {
         //
-        return Inertia::render('Sessions/ShowSession');
+        // return Inertia::render('Sessions/ShowSession');
         // return "Tout fonctionne";
+        return redirect(route('sessions.dashboard'));
     }
 
     /**

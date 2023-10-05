@@ -21,16 +21,16 @@ const title = 'Sessions';
                         <strong>Nom_du_responsable</strong>
                     </h1>
                 </div>
-                <div class="border-4 border-black-500/100 mt-4">
+                <div class="border-4 border-black-500/100 mt-4 bg-gray-200">
 
-                    <div class="flex flex-wrap -mb-8 -mr-6 p-10 rounded-sm">
+                    <div class="-mb-8 -mr-6 p-10 rounded-sm">
                         <form action="" method="post" class="mt-6">
                             <fieldset>
                                 <InputLabel for="ts" class="text-black">
                                     Type de session
                                 </InputLabel>
                                 <select name="tsession" id="ts" placeholder="Type de Session"
-                                    class="ml-6 rounded-lg text-black bg-purple-500">
+                                    class="ml-6 rounded-lg text-black bg-white-200 w-full lg:w-1/2">
                                     <option value="null" />
                                     <option value="TP">Test psychotechnique</option>
                                     <option value="TC">Test collectif</option>
@@ -39,20 +39,20 @@ const title = 'Sessions';
                                     <option value="ED">Etude de dossiers</option>
                                 </select><br>
                                 <InputLabel for="nc">Nombre de Candidats</InputLabel>
-                                <TextInput type="number" name="cand" id="nc" class="ml-6 mt-2" /><br>
+                                <TextInput type="number" name="cand" id="nc" class="ml-6 mt-2 w-full lg:w-1/2"/><br>
                                 <InputLabel for="data">Date</InputLabel>
-                                <TextInput type="date" name="data" id="data" class="ml-6 mt-3" /><br>
+                                <TextInput type="date" name="data" id="data" class="ml-6 mt-3 w-full lg:w-1/2"/><br>
                                 <InputLabel for="heure">Heure</InputLabel>
-                                <TextInput type="time" id="heure" name="heure" class="ml-6 mt-3" /><br>
+                                <TextInput type="time" id="heure" name="heure" class="ml-6 mt-3 w-full lg:w-1/2"/><br>
                                 <InputLabel for="resp" class="text-black-800">Responsable</InputLabel>
-                                <select name="tresp" id="ts" class="ml-6 mt-3 rounded-lg bg-green">
+                                <select name="tresp" id="ts" class="ml-6 rounded-lg text-black bg-white-200 w-full lg:w-1/2">
                                     <option value="null" />
                                     <option value="TP">Josue TOHON</option>
                                     <option value="TC">Tiburce KOUAGOU</option>
                                     <option value="TI">Fabrice ANABA</option>
                                 </select><br>
                                 <button name="add"
-                                    class="rounded-lg shadow bg-purple-600 mt-6 p-4 hover:bg-pink-400" >MODIFIER</button >
+                                    class="rounded-lg shadow bg-purple-600 mt-6 p-4 hover:bg-pink-400" href="/sessions/ShowSession">MODIFIER</button >
 
                             </fieldset>
                         </form>
