@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ResponsableController;
+use App\Http\Controllers\SectionController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,8 @@ Route::middleware([
     })->name('dashboard');
 
     Route::resource('sessions', SessionController::class)->only('index', 'create', 'store', 'show', 'edit', 'update', 'destroy')->middleware(['auth', 'verified']);
+
+    Route::resource('sessions', SectionController::class)->only('index', 'create', 'store', 'show', 'edit', 'update', 'destroy')->middleware(['auth', 'verified']);
 
     Route::resource('responsables', ResponsableController::class)->only('index', 'create', 'store', 'show', 'edit', 'update', 'destroy')->middleware(['auth', 'verified']);
 });

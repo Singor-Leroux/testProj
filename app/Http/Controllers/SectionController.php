@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Session;
+use App\Models\Admin;
+use App\Models\Section;
+use App\Models\Test_steps;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class SessionController extends Controller
+class SectionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +16,10 @@ class SessionController extends Controller
     public function index()
     {
         //
-        return Inertia::render('Sessions/CreateSession');
+        $examples = Section::all();
+        return Inertia::render('Sessions/IndexSessions', [
+            'examples' => $examples,
+        ]);
     }
 
     /**
@@ -23,7 +28,12 @@ class SessionController extends Controller
     public function create()
     {
         //
-        return Inertia::render('Sessions/CreateSession');
+        $type_sessions = Test_steps::all();
+        $admins = Admin::all();
+        return Inertia::render('Sessions/CreateSession', [
+            // 'type_session' => $type_sessions,
+            'admins' => $admins,
+        ]);
     }
 
     /**
@@ -37,7 +47,7 @@ class SessionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Session $session)
+    public function show(Section $section)
     {
         //
     }
@@ -45,7 +55,7 @@ class SessionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Session $session)
+    public function edit(Section $section)
     {
         //
     }
@@ -53,7 +63,7 @@ class SessionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Session $session)
+    public function update(Request $request, Section $section)
     {
         //
     }
@@ -61,7 +71,7 @@ class SessionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Session $session)
+    public function destroy(Section $section)
     {
         //
     }
