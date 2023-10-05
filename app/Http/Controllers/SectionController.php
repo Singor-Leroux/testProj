@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Admin;
 use App\Models\Section;
-use App\Models\Test_steps;
+use App\Models\Test_step;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
@@ -28,11 +28,13 @@ class SectionController extends Controller
     public function create()
     {
         //
-        $type_sessions = Test_steps::all();
-        $admins = Admin::all();
+        $typ_adm = [
+            $type_sessions = Test_step::all(),
+            $admins = Admin::all(),
+        ];
+        // dd($typ_adm);
         return Inertia::render('Sessions/CreateSession', [
-            // 'type_session' => $type_sessions,
-            'admins' => $admins,
+            'typ_ad' => $typ_adm
         ]);
     }
 
@@ -42,6 +44,7 @@ class SectionController extends Controller
     public function store(Request $request)
     {
         //
+        dd($request);
     }
 
     /**
